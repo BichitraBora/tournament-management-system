@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Environment Variables (Secrets, DB URIs, API Keys)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Optional npm cache directory
+.npm
+
+# OS generated files
+.DS_Store
+Thumbs.db
