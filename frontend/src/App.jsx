@@ -20,6 +20,9 @@ function App() {
             <Routes>
               <Route path="/" element={<AuthPage />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/tournaments" element={<div className="py-12 text-center"><h1 className="text-3xl font-bold">All Tournaments</h1><p className="text-gray-500">Coming soon...</p></div>} />
+              <Route path="/about" element={<div className="py-12 text-center"><h1 className="text-3xl font-bold">About Us</h1></div>} />
+              <Route path="/contact" element={<div className="py-12 text-center"><h1 className="text-3xl font-bold">Contact</h1></div>} />
               <Route path="/create-tournament" element={<CreateTournament />} />
               <Route path="/tournaments/:id" element={<TournamentApply />} />
               <Route path="/tournaments/:id/registrations" element={<RegistrationsTable />} />
