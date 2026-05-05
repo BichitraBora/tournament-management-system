@@ -27,10 +27,13 @@ const tournamentSchema = new mongoose.Schema({
     },
     startDate: { type: Date, required: true },
     joiningFee: { type: Number, default: 0 },
-    
-    // THE DYNAMIC FORM ENGINE
-    // Organizers define the fields participants must fill out
+    prizeAmount: { type: Number, default: 0 },
     registrationFormSchema: [formFieldSchema],
+
+    bannerImage: { 
+        type: String, 
+        default: 'https://placehold.co/600x400/111827/ffffff?text=Tournament+Banner' // A default placeholder image if they don't upload one
+    },
 
     isActive: { type: Boolean, default: true }
 }, { timestamps: true });

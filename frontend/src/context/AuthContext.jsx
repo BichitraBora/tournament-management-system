@@ -39,6 +39,27 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('userInfo');
     };
 
+    // NEW: Listen for changes across different tabs
+    useEffect(() => {
+        const syncAuthState = (e) => {
+            // e.key tells us which localStorage item changed
+            if (e.key === 'userInfo') {
+                if (e.newValue) {
+                    // Another tab logged in, update this tab too
+                    setUser(JSON.parse(e.newValue));
+                } else {
+                    // Another tab logged out, log this tab out too
+                    setUser(null);
+                }
+            }
+        };
+
+        window.addEventListener('storage', syncAuthState);
+        
+        // Cleans up the listener when the component unmounts
+        return () => window.removeEventListener('storage', syncAuthState);
+    }, []);
+
     return (
         <AuthContext.Provider value={{ user, login, register, logout, loading }}>
             {children}
