@@ -3,6 +3,9 @@ import { AuthProvider } from './context/AuthContext';
 import AuthPage from './pages/auth/AuthPage';
 import Dashboard from './pages/dashboard/Dashboard';
 import Navbar from './components/layout/Navbar';
+import TournamentsList from './pages/tournaments/TournamentsList';
+import About from './pages/about/About';
+import Contact from './pages/contact/Contact';
 import CreateTournament from './pages/tournaments/CreateTournament';
 import EditTournament from './pages/tournaments/EditTournament';
 import TournamentApply from './pages/tournaments/TournamentApply';
@@ -23,9 +26,9 @@ function App() {
             <Routes>
               <Route path="/" element={<AuthPage />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/tournaments" element={<div className="py-12 text-center"><h1 className="text-3xl font-bold">All Tournaments</h1><p className="text-gray-500">Coming soon...</p></div>} />
-              <Route path="/about" element={<div className="py-12 text-center"><h1 className="text-3xl font-bold">About Us</h1></div>} />
-              <Route path="/contact" element={<div className="py-12 text-center"><h1 className="text-3xl font-bold">Contact</h1></div>} />
+              <Route path="/tournaments" element={<TournamentsList />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/create-tournament" element={<CreateTournament />} />
               <Route path="/edit-tournament/:id" element={<EditTournament />} />
               <Route path="/tournaments/:id" element={<TournamentApply />} />
