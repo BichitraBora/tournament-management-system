@@ -24,6 +24,15 @@ const Navbar = () => {
         console.log("Searching for:", searchQuery);
     };
 
+    // Helper function for the sleek pill highlight
+    const getNavLinkClass = (path) => {
+        // Using startsWith keeps the tab highlighted even if you are on a sub-page (like /tournaments/123)
+        const isActive = location.pathname.startsWith(path);
+        return isActive 
+            ? "px-4 py-2 text-sm font-bold text-gray-900 bg-gray-100 rounded-full transition-all"
+            : "px-4 py-2 text-sm font-medium text-gray-600 transition-all hover:text-gray-900 hover:bg-gray-50 rounded-full";
+    };
+
     return (
         <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
             <div className="container px-4 mx-auto max-w-7xl">
@@ -31,16 +40,16 @@ const Navbar = () => {
                     
                     {/* Left Section: Logo & Main Links */}
                     <div className="flex items-center gap-8">
-                        <Link to="/dashboard" className="text-2xl font-black tracking-tighter text-gray-900">
+                        <Link to="/home" className="text-2xl font-black tracking-tighter text-gray-900">
                             Play<span className="text-gray-400">.Champ</span>
                         </Link>
 
                         {/* Desktop Navigation Links */}
-                        <div className="hidden space-x-6 md:flex">
-                            <Link to="/dashboard" className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900">Home</Link>
-                            <Link to="/tournaments" className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900">Tournaments</Link>
-                            <Link to="/about" className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900">About</Link>
-                            <Link to="/contact" className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900">Contact Us</Link>
+                        <div className="hidden space-x-2 md:flex">
+                            <Link to="/home" className={getNavLinkClass('/home')}>Home</Link>
+                            <Link to="/tournaments" className={getNavLinkClass('/tournaments')}>Tournaments</Link>
+                            <Link to="/about" className={getNavLinkClass('/about')}>About</Link>
+                            <Link to="/contact" className={getNavLinkClass('/contact')}>Contact Us</Link>
                         </div>
                     </div>
 

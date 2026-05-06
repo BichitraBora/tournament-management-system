@@ -87,7 +87,7 @@ const EditTournament = () => {
 
             // Notice we use PUT here instead of POST!
             await api.put(`/tournaments/${id}`, payload);
-            navigate('/dashboard');
+            navigate('/tournaments');
         } catch (err) {
             setError(err.response?.data?.message || 'Failed to update tournament.');
         } finally {

@@ -75,8 +75,7 @@ const TournamentApply = () => {
             });
             
             setMessage({ type: 'success', text: 'Successfully applied for the tournament!' });
-            // Redirect back to dashboard after a short delay
-            setTimeout(() => navigate('/dashboard'), 2000);
+            setTimeout(() => navigate('/tournaments'), 2000);
         } catch (err) {
             setMessage({ 
                 type: 'error', 

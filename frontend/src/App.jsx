@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import AuthPage from './pages/auth/AuthPage';
-import Dashboard from './pages/dashboard/Dashboard';
 import Navbar from './components/layout/Navbar';
+import Home from './pages/home/Home';
 import TournamentsList from './pages/tournaments/TournamentsList';
 import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
 import CreateTournament from './pages/tournaments/CreateTournament';
 import EditTournament from './pages/tournaments/EditTournament';
 import TournamentApply from './pages/tournaments/TournamentApply';
-import RegistrationsTable from './pages/dashboard/RegistrationsTable';
+import RegistrationsTable from './pages/registrations/RegistrationsTable';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
           <main className="container px-4 py-8 mx-auto">
             <Routes>
               <Route path="/" element={<AuthPage />} />
-              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/tournaments" element={<TournamentsList />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />

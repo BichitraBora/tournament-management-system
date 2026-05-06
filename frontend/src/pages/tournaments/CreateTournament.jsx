@@ -85,7 +85,7 @@ const CreateTournament = () => {
             };
 
             await api.post('/tournaments', payload);
-            navigate('/dashboard');
+            navigate('/tournaments');
         } catch (err) {
             setError(err.response?.data?.message || 'Failed to create tournament.');
         } finally {

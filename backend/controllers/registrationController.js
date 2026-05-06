@@ -119,3 +119,14 @@ export const updateRegistrationStatus = async (req, res) => {
     }
 };
 
+export const getMyRegistrations = async (req, res) => {
+    try {
+        // Find all registrations for this user, and attach the tournament details
+        const registrations = await Registration.find({ participantId: req.user._id })
+            .populate('tournamentId');
+            
+        res.status(200).json(registrations);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};

@@ -64,10 +64,10 @@ const RegistrationsTable = () => {
             <div className="flex items-center justify-between pb-4 border-b border-gray-200">
                 <div>
                     <button 
-                        onClick={() => navigate('/dashboard')}
+                        onClick={() => navigate('/tournaments')}
                         className="mb-2 text-sm text-gray-500 hover:text-gray-900 hover:underline"
                     >
-                        ← Back to Dashboard
+                        ← Back to Tournaments
                     </button>
                     <h1 className="text-2xl font-bold text-gray-900">Manage Registrations</h1>
                 </div>
