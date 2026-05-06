@@ -29,8 +29,8 @@ const AuthPage = () => {
             } else {
                 await register(formData);
             }
-            // If successful, redirect to the dashboard
-            navigate('/dashboard'); 
+            // If successful, redirect to the home
+            navigate('/home'); 
         } catch (err) {
             // Display the error message sent from our Express backend
             setError(err.response?.data?.message || 'Something went wrong. Please try again.');
